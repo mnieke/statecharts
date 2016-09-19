@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.BasicInternalEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -224,8 +225,7 @@ public class StateImpl extends SpecificationElementImpl implements State {
 	 * @generated NOT
 	 */
 	public EList<Reaction> getReactions() {
-		EList<Reaction> result = new BasicInternalEList<Reaction>(
-				Reaction.class);
+		EList<Reaction> result = new EObjectEList<Reaction>(Reaction.class, this, SGraphPackage.REACTION);
 		result.addAll(getOutgoingTransitions());
 		result.addAll(getLocalReactions());
 		return result;
@@ -237,8 +237,7 @@ public class StateImpl extends SpecificationElementImpl implements State {
 	 * @generated NOT
 	 */
 	public EList<Reaction> getLocalReactions() {
-		EList<Reaction> result = new BasicInternalEList<Reaction>(
-				Reaction.class);
+		EList<Reaction> result = new EObjectEList<Reaction>(Reaction.class, this, SGraphPackage.REACTIVE_ELEMENT__LOCAL_REACTIONS);
 		EList<Scope> scopes = getScopes();
 		for (Scope scope : scopes) {
 			result.addAll(scope.getReactions());
