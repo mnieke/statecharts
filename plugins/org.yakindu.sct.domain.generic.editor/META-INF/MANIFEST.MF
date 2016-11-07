@@ -16,3 +16,5 @@ Require-Bundle: org.yakindu.sct.ui.editor,
  org.eclipse.xtext.ui.shared,
  org.yakindu.sct.model.sgraph.ui
 Export-Package: org.yakindu.sct.domain.generic.editor
+Bundle-ClassPath: .,
+ guice-multibindings-3.0.jar
